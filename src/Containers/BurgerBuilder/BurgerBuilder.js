@@ -109,12 +109,15 @@ class BurgerBuilder extends Component{
 
         // alert('You Continue!');
 
+        let priceyPrice = this.state.totalPrice;
+        let priceyPricer2 = priceyPrice.toFixed(2);
+
         const queryParams = [];
 
         for(let i in this.state.ingredients){
             queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
         }
-        queryParams.push('price=' + this.state.totalPrice);
+        queryParams.push('price=' + priceyPricer2);
 
         const queryString = queryParams.join('&');
 
