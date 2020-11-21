@@ -9,7 +9,6 @@ const input = (props) => {
 
     if (props.invalid && props.shouldValidate && props.touched){
 
-        // console.log("poppyu")
         inputClasses.push(classes.Invalid)
     }
 
