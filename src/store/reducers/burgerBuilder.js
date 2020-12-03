@@ -4,7 +4,8 @@ import {updateObject} from "../utility";
 const initialState = {
     ingredients: null,
     totalPrice: 4.00,
-    error: false
+    error: false,
+    building: false
 };
 
 const INGREDIENT_PRICES = {
@@ -26,7 +27,8 @@ const burgerBuilder = (state = initialState, action) => {
             const updatedIngredients = updateObject(state.ingredients, updatedIngredient)
             const updatedState = {
                 ingredients: updatedIngredients,
-                totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName]
+                totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName],
+                building: true
             }
             return updateObject(state, updatedState)
         case actionTypes.REMOVE_INGREDIENT:
@@ -48,9 +50,11 @@ const burgerBuilder = (state = initialState, action) => {
                     salad: action.ingredients.salad,
                     bacon: action.ingredients.bacon,
                     cheese: action.ingredients.cheese,
-                    meat: action.ingredients.meat
+                    meat: action.ingredients.meat,
+
 
                 },
+                building: false,
                 totalPrice: 4,
                 error: false
             });
