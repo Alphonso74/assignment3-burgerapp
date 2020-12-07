@@ -7,7 +7,7 @@ class OrderSummary extends Component {
     //This can be functional component
     //Not required
     componentWillUpdate(nextProps, nextState, nextContext) {
-        console.log(" [Order Summary] WillUpdate");
+        // console.log(" [Order Summary] WillUpdate");
 
     }
 
